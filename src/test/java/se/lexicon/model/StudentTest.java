@@ -11,7 +11,7 @@ class StudentTest {
 
     @BeforeEach
     void setUp(){
-        student = new Student(0, "Thomas", "Test@test.com", "None at none, Stockholm");
+     //   student = new Student(0, "Thomas", "Test@test.com", "None at none, Stockholm");
 
     }
 
