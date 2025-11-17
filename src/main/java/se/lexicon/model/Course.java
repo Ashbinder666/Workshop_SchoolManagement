@@ -16,9 +16,9 @@ public class Course {
 
     public Course(String courseName, LocalDate startDate, int weekDuration) {
         this.id = sequencer++;
-        this.courseName = courseName;
-        this.startDate = startDate;
-        this.weekDuration = weekDuration;
+        setCourseName(courseName);
+        setStartDate(startDate);
+        setWeekDuration(weekDuration);
     }
 
     public int getId() {
@@ -57,9 +57,9 @@ public class Course {
         this.students = students;
     }
 
-    public void register(Student student){
+    public void register(Student student) {
 
-        if (students.contains(student)){
+        if (students.contains(student)) {
             throw new RuntimeException("Student already registered");
         } else if (student == null) {
             throw new IllegalArgumentException("Student is null");
@@ -67,13 +67,14 @@ public class Course {
         students.add(student);
     }
 
-    public void unregister(Student student){
-        if (students.contains(student)){
+    public void unregister(Student student) {
+        if (students.contains(student)) {
             students.remove(student);
-        } else if (student == null){
+        } else if (student == null) {
             throw new IllegalArgumentException("Student is null");
+        } else {
+            throw new RuntimeException("Student wasn't registered");
         }
-        throw new RuntimeException("Student wasn't registered");
     }
 
     @Override

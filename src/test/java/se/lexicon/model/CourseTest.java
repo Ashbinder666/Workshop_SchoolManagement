@@ -47,7 +47,7 @@ class CourseTest {
     }
 
     @Test
-    void unregister_existing_studentremoved() {
+    void unregister_existing_studentRemoved() {
         course.register(student);
         course.unregister(student);
         int courseNumElements = course.getStudents().size();
